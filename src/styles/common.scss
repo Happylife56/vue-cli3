@@ -1,0 +1,284 @@
+
+//flex布局样式
+//单轴
+@mixin flex-type ($type1, $type2) {
+    display: flex;
+    justify-content: $type1;
+    align-items: $type2;
+}
+
+//多轴
+@mixin flex-types ($type1, $type2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $type1;
+    align-items: $type2;
+}
+
+//设置竖直方向
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin bgWhite {
+    background: #fff;
+}
+
+@mixin font-size($size) {
+    font-size: #{$size}px;
+}
+
+@mixin margin($direction, $size) {
+    margin-#{$direction}:#{$size}px;
+}
+
+// 主题色
+$themeColor: #f4364c;
+// 加粗色
+$color333: #333333;
+//蓝色
+$blueColor: #409eff;
+// 
+$mainColor: #409EFF;
+
+$color999: #999999;
+
+$colorGray:#97a8be;
+
+.color-33 {color: $color333;}
+
+.color-99 {color: $color999;}
+
+.color-66 {color: #666666;}
+
+.color-d2 {color: #d2d2d2;}
+
+.c-yellow {color: #ffb14d;}
+
+.c-red {color: #ff3d3d;}
+
+.c-green {color: #66bf4b;}
+
+.c-blue {color: $blueColor;}
+
+.c-ali {color: #039feb;}
+
+.c-gray{color: $colorGray};
+
+.big-font {font-size: 1.4rem;}
+
+.icon-weixin {color: #66bf4b;}//微信
+
+.icon-zfb-on {color: #039feb;}//支付宝
+
+.icon-vip1 {color: #ff7178;} //会员卡
+
+.icon-xianjin {color: #ffb14d;}//现金
+
+.icon-yinxingqia1 {color: #ffb922;}//银行卡
+
+$backgroundColor: #ffb14d;
+$borderDivColor:#d8dce5; 
+$borderColor:#f5f5f5;
+
+//超出显示省略号
+.text-overflow {
+    text-align: left;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+//超出显示省略号
+.text-overflow2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+//没有数据样式
+.no-data {
+    .no-data-img {
+        @include flex-types(center, center);
+        height: 100%;
+        font-size: 0.88rem;
+
+        img {
+            width: 7.94rem;
+            height: 7.94rem;
+            margin-bottom: 1.19rem;
+        }
+
+        span {
+            color: #666666;
+        }
+    }
+}
+
+//去除浏览器自动填充内容背景颜色为黄色解决方法
+input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+.mt10 {margin-top: 10px;}
+
+.ml10 {margin-left: 10px;}
+
+.mr10 {margin-right: 10px;}
+
+.mr20 {margin-right: 20px;}
+
+.mr30 {margin-right: 30px;}
+
+.mb10 {margin-bottom: 10px;}
+
+.mb20 {margin-bottom: 20px;}
+
+.ml20 {margin-left: 20px;}
+
+.mt20 {margin-top: 20px;}
+
+.text-right {text-align: right;}
+
+.text-center {text-align: center;}
+
+.pointer{cursor: pointer;}
+
+.weight-600{font-weight: 600;}
+
+.clearfix {
+    display: block;
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.fl {float: left;}
+
+.fr {float: right;}
+
+/* 列表表头的背景 */
+.el-table {
+    font-size: 17px;
+
+    th {
+        background: #eef1f6 !important;
+
+        .el-tag {
+            font-size: 17px;
+        }
+    }
+}
+// tab切换
+.el-tabs{height: 40px;}
+
+//门店列表
+.shop-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start; // justify-content: center;
+    padding: 2%;
+
+    li {
+        width: 32%;
+        height: 200px;
+        border: 1px solid $borderDivColor;
+        padding: 1% 1.5%;
+        @include flex-column();
+
+        &:nth-child(3n-1) {
+            margin: 0 2% 2%;
+        }
+
+        box-sizing: border-box;
+
+        .card-info {
+            height: 120px;
+            display: flex;
+
+            img {
+                width: 100px;
+                height: 100px;
+                flex-shrink: 0;
+            }
+
+            .card-detail {
+                @include flex-column();
+                margin-left: 10px;
+                line-height: 2;
+                width: calc(100% - 120px);
+            }
+
+            .text-overflow {
+                width: 90%;
+            }
+
+            .card-detail-span {
+                font-weight: 600;
+            }
+        }
+
+        .card-set {
+            flex: 1;
+            // border-top: 1px solid $borderDivColor;
+            @include flex-type(flex-end, center);
+        }
+    }
+}
+
+@media screen and (min-width:1560px) {
+    .shop-card {
+        li {
+            width: 24%;
+
+            &:nth-child(3n-1) {
+                margin: 0;
+            }
+
+            &:nth-child(4n-1) {
+                margin: 0 1% 1% 0;
+            }
+
+            &:nth-child(4n-2) {
+                margin: 0 1% 1%;
+            }
+        }
+    }
+}
+
+.flex-justify-center {
+    @include flex-type(center, null);
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #dadada;
+}
+
+@import './transitons.scss';
+@import './element-common.scss';

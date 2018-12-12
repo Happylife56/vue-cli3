@@ -1,0 +1,87 @@
+.collect {
+  height: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  @include flex-column();
+  .faction-search {
+    @include flex-type(null, center);
+    margin-bottom: 10px;
+    .el-button {
+      flex-shrink: 0;
+    }
+  }
+  // 表格
+  .table-div {
+    border: 1px solid $borderDivColor;
+    flex: 1;
+    @include flex-column();
+    width: calc(100% - 5px);
+    overflow: auto;
+    .el-table{
+      flex: 1;
+      height: 100%;
+    }
+    .remarks-info {
+      height: 60px;
+      padding: 0 30px;
+      @include flex-type(space-between, center);
+      border-top: 1px solid $borderDivColor;
+      &:hover {
+        border: 1px solid $themeColor;
+      }
+    }
+    .remarks-content {
+      flex: 1;
+      @include flex-type(null, center);
+      .text-overflow {
+        width: 82%;
+      }
+    }
+  }
+  // 优惠详情
+  .discount-detail{
+    height: 60px;
+    @include flex-type(space-between, center);
+  }
+  // 其他操作
+  .collect-handle{
+    display: flex;
+    .last-order-info, .no-code-goods{
+      width: 294px;
+      height: 130px;
+      border-radius: 4px;
+      border: solid 1px $borderDivColor;
+      padding: 20px;
+    }
+    .last-order-info{
+      ul{
+        line-height: 1.5;
+      }
+    }
+    .no-code-goods{
+      @include flex-type(center, center);
+    }
+    .settlement-money{
+      flex: 1;
+      height: 170px;
+      padding-left: 20px;
+      border-radius: 4px;
+      border: solid 1px $borderDivColor;
+      @include flex-type(space-between, center);
+      .money-handle{
+        @include flex-type(null, center);
+        flex-wrap: wrap;
+        .c-red{
+          font-size: 40px;
+        }
+      }
+      .settle-btn{
+        width: 200px;
+        height: 100%;
+        font-size: 24px;
+      }
+    }
+  }
+}

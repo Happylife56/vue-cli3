@@ -1,0 +1,139 @@
+$height:60px;
+$fontSize:20px;
+
+//侧边栏菜单栏
+.el-menu{
+    height: 100%;
+    border: none !important;
+    position: relative;
+    .el-menu-item {
+        width: 120px !important;
+        padding: 50px;
+        line-height: 40px;
+        @include flex-types(center,center);
+        .iconfont{
+            color: #fff;
+            font-size: 30px;
+        }
+    }
+    .menu-a{
+        a{
+           padding: 50px 30px;
+           @include flex-types(center,center);
+        }
+    }
+    .menu-div{
+        width: 120px;
+        padding: 10px 0;
+        @include flex-types(center,center);
+    }
+    .el-menu-item.is-active {
+        background: $themeColor !important;
+        color: #fff !important;
+        border-bottom: 2px solid transparent !important;
+    }
+    .el-menu-item:last-child(){
+       position: absolute;
+       bottom: 0;
+    }
+}
+// Popover 弹出框
+.el-popper{
+    .menu-more{
+        height: 80px;
+        display: flex;
+        li{
+            @include flex-types(center,center);
+            padding: 0 20px;
+            color: $colorGray;
+            .iconfont{
+                font-size: 28px;
+            }
+        }
+    }
+    // 头部二维码
+    .flex-center{
+      text-align: center;
+      font-size: 16px;
+    }
+    //用户信息
+    .user-info{
+        font-size: 16px;
+        line-height: 2;
+        li{
+            @include flex-type(space-between,center); 
+            span:first-child{
+                @include flex-type(null,center); 
+            }
+            &:last-child{
+                margin-top: 10px;
+                padding-top: 5px;
+                border-top:1px solid $borderDivColor; 
+                .el-button{
+                    font-size: 16px;
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+        }
+      .iconfont{
+          font-size: 22px;
+      }
+    }
+}
+
+// 按钮的样式
+.height-button {
+    height: $height;
+}
+@mixin width-btn($width) {
+    width: #{$width}px;
+    height: $height;
+    font-size: 20px;
+}
+.wieght195-btn{
+  @include width-btn(195)
+}
+.border-btn{
+   border: 1px solid $themeColor;
+   color: $themeColor;
+   font-size: $fontSize;
+   width: 150px;
+   height: $height;
+}
+.padding-0{
+  padding: 0;
+}
+//输入框的样式
+.el-input,
+.el-input__inner,
+.el-textarea__inner{
+    font-size: 18px !important;
+}
+.height-input{
+    height: $height !important;
+    .el-input__inner{
+        height: $height !important;
+        font-size: $fontSize;
+    }
+}
+
+.border-bottom-input{
+    .el-input__inner{
+        border-top:none;
+        border-left:none;
+        border-right:none;
+        border-radius: 0;
+    }
+}
+
+// 表格
+.el-table{
+    .table-empty{
+        @include flex-types(center, center); 
+    }
+}
+
+.font-16{
+    font-size: 15px;
+  }
