@@ -105,7 +105,7 @@ export default {
   },
   mounted() {
     //获取门店的信息（下拉菜单）
-    this.getStoreList();
+    // this.getStoreList();
   },
   computed: {
     ...mapState('chooseStore', [

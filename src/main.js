@@ -4,7 +4,6 @@ import router from './router';
 import store from './store';
 import './registerServiceWorker';
 import './plugins/element.js';
-import './plugins/element.js';
 
 import './styles/normalize.css';
 import './assets/iconfont/iconfont.css';
@@ -24,13 +23,13 @@ Vue.config.productionTip = false;
 import Mixin from './mixins';
 Vue.mixin(Mixin);
 
-router.beforeEach((to, from, next) => {
-  if (to.meta.icon) {
-    document.icon =
-      'https://maint.deeptel.com.cn/upload/M00/00/27/cWrKpVv7lQKASwaXAAEG_RLR1Ak009.png';
-  }
-  next();
-});
+// router.beforeEach((to, from, next) => {
+//   if (to.meta.icon) {
+//     document.icon =
+//       'https://maint.deeptel.com.cn/upload/M00/00/27/cWrKpVv7lQKASwaXAAEG_RLR1Ak009.png';
+//   }
+//   next();
+// });
 
 new Vue({
   router,
