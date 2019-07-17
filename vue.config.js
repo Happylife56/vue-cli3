@@ -55,7 +55,7 @@ module.exports = {
   // webpack-dev-server 相关配置
   devServer: {
     open: process.platform === 'darwin',
-    host: 'shop1.deeptel.com.cn',
+    host: 'localhost',
     port: 8086,
     https: false,
     hotOnly: false,
