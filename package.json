@@ -20,17 +20,19 @@
     "@vue/cli-plugin-pwa": "^3.0.2",
     "@vue/cli-service": "^3.0.2",
     "@vue/eslint-config-prettier": "^4.0.0",
+    "@vue/eslint-config-standard": "^4.0.0",
     "axios": "^0.18.0",
     "babel-eslint": "^10.0.1",
     "babel-plugin-component": "^1.1.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
     "node-sass": "^4.9.0",
-    "postcss-px-to-viewport": "^0.0.3",
+    "postcss-pxtorem": "^4.0.1",
     "sass-loader": "^7.0.1",
     "vue-cli-plugin-element": "^1.0.0",
     "vue-meta": "^1.5.6",
     "vue-template-compiler": "^2.5.17",
+    "vuedraggable": "^2.23.0",
     "vuex-persistedstate": "^2.5.4"
   },
   "eslintConfig": {
@@ -61,9 +63,14 @@
   "postcss": {
     "plugins": {
       "autoprefixer": {},
-      "postcss-px-to-viewport": {
-        "viewportWidth": 1280,
-        "minPixelValue": 1
+      "postcss-pxtorem": {
+        "rootValue": 75,
+        "selectorBlackList": [
+          "vant"
+        ],
+        "propList": [
+          "*"
+        ]
       }
     }
   },

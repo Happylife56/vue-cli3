@@ -1,44 +1,81 @@
 // 商品的表格
 <template>
-  <el-table :data="tableDatas" ref="table" height="100%">
-    <el-table-column prop="date" label="商品名称" show-overflow-tooltip>
-    </el-table-column>
-    <el-table-column prop="name" label="规格" show-overflow-tooltip>
-    </el-table-column>
-    <el-table-column prop="address" label="优惠活动" show-overflow-tooltip>
-    </el-table-column>
-    <el-table-column
+  <ElTable
+    :data="tableDatas"
+    ref="table"
+    height="100%"
+  >
+    <ElTableColumn
+      prop="date"
+      label="商品名称"
+      show-overflow-tooltip
+    >
+    </ElTableColumn>
+    <ElTableColumn
+      prop="name"
+      label="规格"
+      show-overflow-tooltip
+    >
+    </ElTableColumn>
+    <ElTableColumn
+      prop="address"
+      label="优惠活动"
+      show-overflow-tooltip
+    >
+    </ElTableColumn>
+    <ElTableColumn
       prop="price"
       label="零售价（优惠价）"
       show-overflow-tooltip
       :render-header="renderHeader"
       min-width="120"
     >
-    </el-table-column>
-    <el-table-column prop="address" label="数量" show-overflow-tooltip>
-    </el-table-column>
-    <el-table-column prop="address" label="小计" show-overflow-tooltip>
-    </el-table-column>
-    <el-table-column prop="address" label="导购员" show-overflow-tooltip>
-    </el-table-column>
-    <el-table-column
+    </ElTableColumn>
+    <ElTableColumn
+      prop="address"
+      label="数量"
+      show-overflow-tooltip
+    >
+    </ElTableColumn>
+    <ElTableColumn
+      prop="address"
+      label="小计"
+      show-overflow-tooltip
+    >
+    </ElTableColumn>
+    <ElTableColumn
+      prop="address"
+      label="导购员"
+      show-overflow-tooltip
+    >
+    </ElTableColumn>
+    <ElTableColumn
       prop="delete"
       label="删除"
       :render-header="renderHeader"
       width="120"
     >
       <template slot-scope="scope">
-        <el-button @click="handleDelete(scope.row)">删除</el-button>
+        <ElButton @click="handleDelete(scope.row)">
+          删除
+        </ElButton>
       </template>
-    </el-table-column>
+    </ElTableColumn>
     <div slot="empty">
-      <img src="../../assets/image/empty.png" alt="" />
+      <img
+        src="../../assets/image/empty.png"
+        alt=""
+      />
       <div class="table-empty mt20">
-        <span class="mb20 color-33">暂无商品~</span>
-        <span class="font-16">请点击右边的商品列表或扫描商品条形码</span>
+        <span class="mb20 color-33">
+          暂无商品~
+        </span>
+        <span class="font-16">
+          请点击右边的商品列表或扫描商品条形码
+        </span>
       </div>
     </div>
-  </el-table>
+  </ElTable>
 </template>
 
 <script>
@@ -98,30 +135,30 @@ export default {
         }
       ],
       tableDatas: []
-    };
+    }
   },
   watch: {
     tableData(val) {
       if (val.length) {
         this.$nextTick(() => {
-          let container = this.$el.querySelector('.el-table__body-wrapper');
-          container.scrollTop = container.scrollHeight;
-        });
+          let container = this.$el.querySelector('.el-table__body-wrapper')
+          container.scrollTop = container.scrollHeight
+        })
       }
     }
   },
   mounted() {
     setTimeout(() => {
-      this.setTableBottom();
-    }, 100);
+      this.setTableBottom()
+    }, 100)
   },
   methods: {
-    //表格出现滚动条滚动到底部
+    // 表格出现滚动条滚动到底部
     setTableBottom() {
-      let container = this.$el.querySelector('.el-table__body-wrapper');
-      container.scrollTop = container.scrollHeight;
+      let container = this.$el.querySelector('.el-table__body-wrapper')
+      container.scrollTop = container.scrollHeight
     },
-    //修改表格的头信息
+    // 修改表格的头信息
     renderHeader(h, { column }) {
       // 重新渲染表头
       if (column.property == 'price') {
@@ -133,21 +170,21 @@ export default {
               <i class="el-icon-warning" style="color:#d2d2d2;font-size:20px" />
             </el-tooltip>
           </span>
-        );
+        )
       }
       if (column.property == 'delete') {
         return (
           <span>
             <i class="el-icon-delete" style="font-size:24px" />
           </span>
-        );
+        )
       }
     },
-    //删除
+    // 删除
     handleDelete(row) {
-      let index = this.tableData.indexOf(row);
-      this.tableData.splice(index, 1);
+      let index = this.tableData.indexOf(row)
+      this.tableData.splice(index, 1)
     }
   }
-};
+}
 </script>

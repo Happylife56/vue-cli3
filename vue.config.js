@@ -5,9 +5,9 @@ module.exports = {
    * baseUrl: process.env.NODE_ENV==='production'?"https://cdn.didabisai.com/front/":'front/',
    */
   // 基本路径
-  baseUrl: '/',
+  baseUrl: process.env.NODE_ENV === 'production' ? '/' : '/static/app/clerk/',
   // 输出文件目录
-  outputDir: 'dist',
+  outputDir: '../docker/dist/static/app/clerk',
   // eslint-loader 是否在保存的时候检查
   lintOnSave: true,
   // use the full build with in-browser compiler?
@@ -15,13 +15,6 @@ module.exports = {
   // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
   chainWebpack: () => {},
   configureWebpack: () => {},
-  // 如果想要引入babel-polyfill可以这样写
-  // configureWebpack: (config) => {
-  //   config.entry = ["babel-polyfill", "./src/main.js"]
-  // },
-  // vue-loader 配置项
-  // https://vue-loader.vuejs.org/en/options.html
-  // 生产环境是否生成 sourceMap 文件
   productionSourceMap: false,
   // css相关配置
   css: {
@@ -55,7 +48,7 @@ module.exports = {
   // webpack-dev-server 相关配置
   devServer: {
     open: process.platform === 'darwin',
-    host: 'shop1.deeptel.com.cn',
+    host: 'localhost',
     port: 8086,
     https: false,
     hotOnly: false,
@@ -77,4 +70,4 @@ module.exports = {
   pluginOptions: {
     // ...
   }
-};
+}

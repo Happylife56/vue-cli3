@@ -6,4 +6,4 @@ export default {
   },
   component: () => import('@/views/Financial.vue'),
   children: []
-};
+}

@@ -4,5 +4,5 @@ export default {
   meta: {
     title: '订单'
   },
-  component: () => import('@/views/Order.vue') //订单
-};
+  component: () => import('@/views/Order.vue') // 订单
+}

@@ -12,9 +12,9 @@ export default {
   data() {
     return {
       money: '20'
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,30 +1,43 @@
 <template>
   <div class="home">
-    <transition name="fade-transformY" mode="out-in">
-      <div class="left-menu" v-if="bitMenuShow"><asiderMenu></asiderMenu></div>
-    </transition>
+    <Transition
+      name="fade-transformY"
+      mode="out-in"
+    >
+      <div
+        class="left-menu"
+        v-if="bitMenuShow"
+      >
+        <AsiderMenu></AsiderMenu>
+      </div>
+    </Transition>
     <div class="right-view">
-      <shopHeader></shopHeader>
-      <transition name="fade-transform" mode="out-in">
-        <keep-alive> <router-view></router-view> </keep-alive>
-      </transition>
+      <ShopHeader></ShopHeader>
+      <Transition
+        name="fade-transform"
+        mode="out-in"
+      >
+        <KeepAlive>
+          <RouterView></RouterView>
+        </KeepAlive>
+      </Transition>
     </div>
   </div>
 </template>
 
 <script>
-import asiderMenu from '../components/AsiderMenu';
-import shopHeader from '../components/shopHeader';
-import { mapState, mapMutations } from 'vuex';
+import asiderMenu from '../components/AsiderMenu'
+import shopHeader from '../components/shopHeader'
+import { mapState } from 'vuex'
 export default {
-  name: 'home',
+  name: 'Home',
   components: { asiderMenu, shopHeader },
   computed: {
     ...mapState('common', [
-      'bitMenuShow' //菜单是否显示
+      'bitMenuShow' // 菜单是否显示
     ])
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
