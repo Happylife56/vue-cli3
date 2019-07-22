@@ -107,7 +107,7 @@
 </template>
 
 <script>
-import chooseStore from './components/ChooseStore'
+import ChooseStore from './components/ChooseStore'
 import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'ShopHeader',
@@ -116,7 +116,7 @@ export default {
       'bitMenuShow' // 菜单是否显示
     ])
   },
-  components: { chooseStore },
+  components: { ChooseStore },
   methods: {
     ...mapMutations({
       setMenuShowHidden: 'common/setMenuShowHidden' // 设置菜单显示或者隐藏

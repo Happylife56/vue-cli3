@@ -15,6 +15,8 @@ import * as filters from './filters'
 
 // 引用公用的方法
 import Mixin from './mixins'
+
+import 'lib-flexible/flexible.js'
 // 设置全局过滤器
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
@@ -22,7 +24,6 @@ Object.keys(filters).forEach(key => {
 
 Vue.config.productionTip = false
 Vue.mixin(Mixin)
-
 // router.beforeEach((to, from, next) => {
 //   if (to.meta.icon) {
 //     document.icon =

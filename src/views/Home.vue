@@ -26,12 +26,12 @@
 </template>
 
 <script>
-import asiderMenu from '../components/AsiderMenu'
-import shopHeader from '../components/shopHeader'
+import AsiderMenu from '../components/AsiderMenu'
+import ShopHeader from '../components/shopHeader/index'
 import { mapState } from 'vuex'
 export default {
   name: 'Home',
-  components: { asiderMenu, shopHeader },
+  components: { AsiderMenu, ShopHeader },
   computed: {
     ...mapState('common', [
       'bitMenuShow' // 菜单是否显示

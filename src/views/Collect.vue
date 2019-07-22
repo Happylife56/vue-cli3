@@ -160,7 +160,7 @@
 
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex'
-import goodsTable from './collect/GoodsTable'
+import GoodsTable from './collect/GoodsTable'
 export default {
   name: 'Home',
   data() {
@@ -175,7 +175,7 @@ export default {
   computed: {
     ...mapState('collect', ['loginUrl'])
   },
-  components: { goodsTable },
+  components: { GoodsTable },
   mounted() {
     console.log(this.$route.meta.title)
     this.getLoginUrl()

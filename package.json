@@ -26,6 +26,7 @@
     "babel-plugin-component": "^1.1.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
+    "lib-flexible": "^0.3.2",
     "node-sass": "^4.9.0",
     "postcss-pxtorem": "^4.0.1",
     "sass-loader": "^7.0.1",
@@ -65,9 +66,6 @@
       "autoprefixer": {},
       "postcss-pxtorem": {
         "rootValue": 75,
-        "selectorBlackList": [
-          "vant"
-        ],
         "propList": [
           "*"
         ]
