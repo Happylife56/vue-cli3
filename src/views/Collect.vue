@@ -178,7 +178,8 @@ export default {
   components: { GoodsTable },
   mounted() {
     console.log(this.$route.meta.title)
-    this.getLoginUrl()
+    // this.getLoginUrl()
+    console.log(this.$store)
   },
   methods: {
     ...mapMutations({}),

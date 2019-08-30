@@ -26,7 +26,7 @@ export default {
   },
   mounted() {
     // 获取单点登录或者授权登录
-    this.getLoginInit()
+    // this.getLoginInit()
   },
   methods: {
     ...mapMutations({
@@ -54,6 +54,7 @@ export default {
               } else {
                 // 判断是否为双屏
                 if (typeof doubleAndroid !== 'undefined') {
+                  // eslint-disable-next-line no-undef
                   doubleAndroid.afreshUrl() // token过期跳转退出的双屏的登录界面
                 }
               }

@@ -43,7 +43,11 @@ const mutations = {
 }
 
 // getters
-const getters = {}
+const getters = {
+  getToken(state) {
+    return state.token
+  }
+}
 
 // actions
 const actions = {}
